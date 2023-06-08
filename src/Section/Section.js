@@ -1,5 +1,5 @@
-import './Section.css';
+import css from './Section.module.css';
 
-const Section = ({ children }) => <section className="container">{children}</section>;  
+const Section = ({ title, children }) => <section title={title} className={css.container}>{children}</section>;  
 export default Section;
 

@@ -3,7 +3,7 @@ import FeedbackOptions from '../FeedbackOptions/FeedbackOptions';
 import Statistics from '../Statistics/Statistics';
 import Notification from '../../Notification/Notification';
 import Section from '../../Section/Section';
-import './App.css';
+import css from './App.module.css';
 
 const feedbackOptions=['good', 'neutral', 'bad'];
 
@@ -40,12 +40,12 @@ class App extends Component{
     const positivePercentage = this.countPositiveFeedbackPercentage();
     return(
     <>
-      <Section title="">
-        <h2 className="Feedback__title">Please leave feedback</h2>
+      <Section title="Please leave feedback">
+        <h2 className={css.Feedback__title}>Please leave feedback</h2>
         <FeedbackOptions options={feedbackOptions} onLeaveFeedback={this.leaveFeedback}/>
       </Section>
-      <Section title="">
-        <h2 className="Feedback__statistic-title">Statistics</h2>
+      <Section title="Statistics">
+        <h2 className={css.Feedback__statisticTitle}>Statistics</h2>
 
         {total>0
         ?<Statistics good={good} neutral={neutral} bad={bad} total={total} positivePercentage={positivePercentage}/>
